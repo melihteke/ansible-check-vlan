@@ -15,7 +15,7 @@
           - show vlan
       register: result
 
-    - name: Print 'show vlans' output
+    - name: Print 'show vlan' output
       debug:
         var: result.stdout_lines
 
