@@ -1,4 +1,4 @@
-# Ansible Playbook for Checking VLAN 2000 on Cisco Devices
+# Ansible Playbook for Checking a VLAN on Cisco Devices
 
 This Ansible playbook checks if VLAN 2000 exists on Cisco devices and writes the result to a CSV file.
 
