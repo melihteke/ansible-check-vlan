@@ -1,0 +1,32 @@
+---
+- name: Check VLAN 2000 on Cisco devices
+  hosts: cisco
+  vars_files:
+    - /home/mteke/ansible/vault.yml
+  gather_facts: no
+  connection: network_cli
+  vars:
+    ansible_network_os: ios
+
+  tasks:
+    - name: Run 'show vlan' command
+      ios_command:
+        commands:
+          - show vlan
+      register: result
+
+    - name: Print 'show vlans' output
+      debug:
+        var: result.stdout_lines
+
+    - name: Check if VLAN 2000 exists
+      set_fact:
+        vlan_exists: "{{ '2000' in result.stdout[0] }}"
+
+    - name: Write to CSV file
+      delegate_to: localhost
+      lineinfile:
+        path: "/home/mteke1/ansible/vlan_check.csv"
+        line: "{{ inventory_hostname }}, vlan 2000 {{ 'exist' if vlan_exists else 'NOT exist' }}"
+        create: yes
+        mode: '0666'
