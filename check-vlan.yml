@@ -26,7 +26,7 @@
     - name: Write to CSV file
       delegate_to: localhost
       lineinfile:
-        path: "/home/mteke1/ansible/vlan_check.csv"
+        path: "/home/mteke/ansible/vlan_check.csv"
         line: "{{ inventory_hostname }}, vlan 2000 {{ 'exist' if vlan_exists else 'NOT exist' }}"
         create: yes
         mode: '0666'
