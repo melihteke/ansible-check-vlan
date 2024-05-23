@@ -25,12 +25,10 @@ This Ansible playbook checks if VLAN 2000 exists on Cisco devices and writes the
 
 ## Usage
 
-To run the playbook, use the following command:
-
-```bash
-ansible-playbook -i hosts.ini check-vlan.yaml --ask-vault-pass
+## Clone Repo
+```sh
+git clone https://github.com/melihteke/ansible-check-vlan.git
 ```
-Replace **hosts.ini** with your inventory file and playbook.yml with the path to this playbook. The --ask-vault-pass option prompts for the vault password.
 
 ## Vault
 Sensitive data like device credentials are stored in an Ansible Vault file. The path to the vault file is /home/mteke/ansible/vault.yml. To edit the vault file, use the ansible-vault edit command.
@@ -56,6 +54,14 @@ vault.yml
 ansible_user: mteke
 ansible_password: your_password
 ```
+
+## Run Playbook
+To run the playbook, use the following command:
+```bash
+ansible-playbook -i hosts.ini check-vlan.yaml --ask-vault-pass
+```
+Replace **hosts.ini** with your inventory file and playbook.yml with the path to this playbook. The --ask-vault-pass option prompts for the vault password.
+
 
 
 
