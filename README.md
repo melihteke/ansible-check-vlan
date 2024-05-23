@@ -54,7 +54,8 @@ vault.yml
 ansible_user: mteke
 ansible_password: your_password
 ```
-This is just a sample encrypted vault file. the content is already changed so. it can not be used anymore. I just left this here for visual representation.
+This is just a sample encrypted vault file. the content is already changed so. it can not be used anymore. 
+I just left this here for visual representation.
 ![image](https://github.com/melihteke/ansible-check-vlan/assets/36086368/ad5012d9-d1ee-40c7-a348-92b27705e9ec)
 
 
